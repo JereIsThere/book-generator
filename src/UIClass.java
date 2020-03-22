@@ -65,8 +65,10 @@ public class UIClass {
     }
 
     private void setUpLayout() {
-        pnl_main.add(pnl_file, "pushx, growx, wrap");
-        pnl_main.add(pnl_reflow, "pushx, growx, wrap");
+        pnl_main.add(pnl_file, "center, pushx, growx, wrap");
+        pnl_main.add(pnl_reflow, "center, pushx, growx, wrap");
+        pnl_main.add(pnl_options, "center, split 2");
+        pnl_main.add(btn_export, "center, grow");
     }
 
     private void initMainStuff() {
@@ -157,6 +159,17 @@ public class UIClass {
     }
 
     private void initOptionsPanel() {
+        //panel
+        pnl_options = new JPanel();
+        Border optionsBorder = BorderFactory.createTitledBorder("options");
+        pnl_options.setBorder(optionsBorder);
+        pnl_options.setLayout(new FlowLayout());
+
+        //checkbox
+        cb_generateLineNumbers = new JCheckBox("generate line numbers");
+
+        //layout
+        pnl_options.add(cb_generateLineNumbers);
     }
 
     private void initMisc() {
@@ -170,6 +183,16 @@ public class UIClass {
 
         taskBarIcons.add(mainIcon);
         taskBarIcons.add(midIcon);
+
+        //export button
+        btn_export = new JButton("Export");
+        btn_export.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                //TODO implement export
+            }
+        });
+        btn_export.setEnabled(false);
     }
     //</editor-fold>
 
