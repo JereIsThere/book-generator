@@ -3,7 +3,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UIClass {
+public class BadUIClass {
     private JPanel pnl_file;
     private JPanel pnl_reflow;
     private JPanel pnl_options;
@@ -57,7 +57,7 @@ public class UIClass {
         frame = new JFrame("UIClass");
         frame.setIconImages(taskBarIcons);
         frame.setLocationRelativeTo(null);
-        frame.setContentPane(new UIClass().pnl_main);
+        frame.setContentPane(new BadUIClass().pnl_main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
